@@ -1,0 +1,137 @@
+/* ! Copyright (c) 2024, Brandon Ramirez, brr.dev */
+
+:root {
+    /* Container Variables */
+    --ui-console-background-color: #F5F5F5;
+    --ui-console-dm-background-color: #111111;
+    --ui-console-border-color: #111111;
+    --ui-console-dm-border-color: #F5F5F5;
+    --ui-console-border-width: 1px;
+    --ui-console-border-radius: 0.375rem;
+
+    /* Font Variables */
+    --ui-console-font-family: 'Reddit Mono', monospace;
+    --ui-console-font-weight: 300;
+    --ui-console-font-size: 1rem;
+    --ui-console-line-height: 1.5rem;
+    --ui-console-font-color: #111111;
+    --ui-console-dm-font-color: #F5F5F5;
+
+    /* Font Interaction Vars */
+    --ui-console-font-color-i-hover: #ced4da;
+    --ui-console-font-color-i-active: #adb5bd;
+
+    /* Preset Style Variables */
+
+    /* Boxed output */
+    --ui-console-box-vertical-padding: 1rem;
+    --ui-console-box-side-padding: 1.5rem;
+    --ui-console-box-border-width: 0.125rem;
+    --ui-console-box-border-color: #F5F5F5;
+}
+
+.ui-console {
+    /* Container layout */
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+    gap: 0;
+
+    padding: 1rem;
+    overflow-y: auto;
+
+    /* Container styling */
+    background-color: transparent;
+    /* background-color: var(--ui-console-background-color); */
+    /* border: var(--ui-console-border-width) solid var(--ui-console-border-color); */
+    /* border-radius: var(--ui-console-border-radius); */
+
+    /* Font styling */
+    color: var(--ui-console-font-color);
+    font-family: var(--ui-console-font-family), monospace;
+    font-weight: var(--ui-console-font-weight);
+    font-size: var(--ui-console-font-size);
+    line-height: var(--ui-console-line-height);
+
+    /* The app-wide default is to allow lowercase only */
+    & * {
+        text-transform: none;
+    }
+
+    .ui-dark-mode & {
+        --ui-console-font-color: var(--ui-console-dm-font-color);
+        --ui-console-background-color: var(--ui-console-dm-background-color);
+        --ui-console-border-color: var(--ui-console-dm-border-color);
+    }
+
+    & .interactive {
+        cursor: pointer;
+
+        &:hover {
+            --ui-console-font-color: var(--ui-console-font-color-i-hover);
+        }
+
+        &:active {
+            --ui-console-font-color: var(--ui-console-font-color-i-active);
+        }
+    }
+
+    & .alt {
+        font-weight: 600;
+        text-decoration: underline;
+    }
+
+    & .small {
+        font-size: 0.75rem;
+    }
+
+    & .med-small {
+        font-size: 0.875rem;
+    }
+
+    & .box {
+        border: var(--ui-console-box-border-width) dashed var(--ui-console-box-border-color);
+        padding: var(--ui-console-box-vertical-padding) var(--ui-console-box-side-padding);
+    }
+
+    & .center-align {
+        text-align: center;
+    }
+
+    & .container {
+        width: max-content;
+        display: inline-flex;
+        flex-flow: column nowrap;
+        gap: 0;
+    }
+
+    & .top-space {
+        margin-top: 0.25rem;
+    }
+
+    & .top-space-x2 {
+        margin-top: 0.5rem;
+    }
+
+    .ui-console-input-wrapper {
+        /* Input container styling */
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-start;
+
+        .ui-console-input-prefix {
+            font-style: italic;
+        }
+
+        .ui-console-input {
+            /* Input container styling */
+            flex-grow: 1;
+
+            &:focus,
+            &:focus-visible {
+                outline: none;
+                appearance: none;
+            }
+        }
+    }
+}
