@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "name": "@zenith-game/react-console",
   "description": "A React component that runs a Zenith text adventure game disc in a custom browser-based console.",
   "author": "Brandon Ramirez <brandon@brr.dev>",
