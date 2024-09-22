@@ -1,3 +1,3 @@
-# @brr-dev/typescript-package-template
+# @zenith-game/react-console
 
-A template repo for bundling TypeScript packages.
+A React component that runs a Zenith text adventure game disc in a custom browser-based console.
