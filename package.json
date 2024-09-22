@@ -12,7 +12,9 @@
   ],
   "scripts": {
     "build": "tsup",
-    "prepare": "pnpm build"
+    "prepare": "pnpm build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "keywords": [
     "javascript",
@@ -23,8 +25,18 @@
     "react"
   ],
   "devDependencies": {
+    "@storybook/addon-essentials": "^8.3.2",
+    "@storybook/addon-interactions": "^8.3.2",
+    "@storybook/addon-links": "^8.3.2",
+    "@storybook/addon-onboarding": "^8.3.2",
+    "@storybook/blocks": "^8.3.2",
+    "@storybook/react": "^8.3.2",
+    "@storybook/react-vite": "^8.3.2",
+    "@storybook/test": "^8.3.2",
     "@types/react": "^18.3.8",
     "prettier": "^3.3.3",
+    "react-dom": "^18.3.1",
+    "storybook": "^8.3.2",
     "ts-node": "^10.9.2",
     "tsup": "^8.3.0",
     "typescript": "^5.6.2"
